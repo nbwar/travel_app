@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130828165155) do
+ActiveRecord::Schema.define(version: 20130921231641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "excursions", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.string   "description"
+    t.string   "price"
+    t.string   "image_url"
+    t.string   "link"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "suggestions", force: true do |t|
+    t.integer  "vote_count"
+    t.integer  "travel_group_id"
+    t.integer  "excursion_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "travel_groups", force: true do |t|
+    t.string   "name"
+    t.string   "destination"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"
@@ -29,5 +59,13 @@ ActiveRecord::Schema.define(version: 20130828165155) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", unique: true, using: :btree
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "suggestion_id"
+    t.integer  "choice"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

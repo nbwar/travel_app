@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :users
+  has_many :votes
+
+
+
   has_secure_password
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

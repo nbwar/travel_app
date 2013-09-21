@@ -1,0 +1,2 @@
+class TravelGroupsController < ApplicationController
+end
