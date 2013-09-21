@@ -5,13 +5,13 @@ common: &common
 
 development:
   <<: *common
-  database: YOUR_APP_NAME_dev
+  database: travel_dev
 
 test:
   <<: *common
-  database: YOUR_APP_NAME_test
+  database: travel_test
 
 production:
   <<: *common
-  database: YOUR_APP_NAME
+  database: travel
 
