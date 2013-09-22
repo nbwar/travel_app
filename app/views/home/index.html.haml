@@ -7,8 +7,14 @@
   = render 'dashboard'
 - else
   .container
-    %h1
-      WEFUN
+    %h1 WEFUN
+    %p
+      %span
+        Travel Together
+      %span
+        Plan Together
+      %span
+        Live Together
     = link_to image_tag("/assets/fbook_icon_btn.png", :border =>0), facebook_oauth_path
 
 
@@ -25,8 +31,18 @@
       font-size: 7em;
       font-family: 'Montserrat', sans-serif;
       font-weight: 400;
+      margin-bottom: 0;
 
     }
+    p {
+      color: white;
+      margin-bottom: 50px;
+    }
+
+    span {
+      margin-right: 20px;
+    }
+
     html {
       background: url("assets/bg1.jpg") no-repeat center center fixed;
       -webkit-background-size: cover;
@@ -35,11 +51,4 @@
       background-size: cover;
     }
 
-    .container {
-      text-align: center;
-      margin: 0 auto;
-      position: relative;
-      top: 100px;
-      width: 800px;
-      height: 400px;
-    }
+
