@@ -16,6 +16,8 @@ Travel::Application.routes.draw do
 
 
 
-
+  namespace :api do
+    get '/users.json' => 'test#index'
+  end
 
 end
