@@ -1,7 +1,41 @@
+
+
+
 =content_for :title, "Travel"
 
 - if current_user
   = render 'dashboard'
 - else
-  %h1
-    Hello from index
+  .container
+    %h1
+      Adventure Us
+    = link_to 'Login With Facebook', facebook_oauth_path
+
+
+
+
+
+
+
+
+
+  :css
+    h1 {
+      color: white;
+      font-size: 4em;
+    }
+    html {
+      background: url("assets/bg1.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .container {
+      margin: 0 auto;
+      position: relative;
+      top: 100px;
+      width: 800px;
+      height: 400px;
+    }

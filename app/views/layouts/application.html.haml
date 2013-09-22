@@ -7,10 +7,6 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    #nav
+    -if current_user
       = render :partial => 'shared/nav'
-    #flash
-      = render :partial => 'shared/flash'
-    #wrapper
-      = yield
-    #footer
+    = yield
