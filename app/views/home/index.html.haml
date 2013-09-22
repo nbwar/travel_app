@@ -3,5 +3,11 @@
 - if current_user
   = render 'dashboard'
 - else
-  %h1
-    Hello from index
+  .bg
+  .login
+    %h2.advent
+      adventure US
+    %span.slogan
+      Begin Your Adventure
+    .fb_login
+      = link_to image_tag("fbook_icon_btn.png", :border=>0), facebook_oauth_path
