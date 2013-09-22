@@ -11,6 +11,8 @@ class TravelGroup < ActiveRecord::Base
   after_create :find_excursions
 
 
+
+
   private
 
     def generate_name

@@ -12,7 +12,7 @@ gem 'haml-rails'
 gem 'omniauth-facebook'
 gem 'geocoder'
 gem 'httparty'
-
+gem 'sunspot_rails'
 
 group :doc do
   gem 'sdoc', require: false
