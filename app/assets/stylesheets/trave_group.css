@@ -1,1 +1,12 @@
-trave_group.css
+.member_table{}
+.member_add_table{
+	position: absolute;
+	height: 300px;
+	width: 300px;
+}
+#add_firend{}
+.user_img{}
+.vote_cast{}
+#friends{}
+#book_listener{}
+#vote_listener{}

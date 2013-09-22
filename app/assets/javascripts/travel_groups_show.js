@@ -42,6 +42,7 @@ GroupMembersView.prototype = {
   renderAddTable: function(){
     console.log('renderAddTable');
     $('body').append(this.view);
+    this.renderRows();
   },
   renderImages: function(){
     console.log('renderImages');
