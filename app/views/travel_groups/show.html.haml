@@ -1,27 +1,28 @@
-%h1
-  = @group.name
-  = "#{@group.start_date} - #{@group.end_date}"
-%h3
-  = "Group Code: #{@group.group_code}"
-%h2
-  Adventurers +
+.container
+  %h1
+    = @group.name
+    = "#{@group.start_date} - #{@group.end_date}"
+  %h3
+    = "Group Code: #{@group.group_code}"
+  %h2
+    Adventurers
 
-- @group.users.each do |u|
-  = image_tag u.image
+  - @group.users.each do |u|
+    = image_tag u.image
 
-%h2
-  = link_to 'Book', '#', {:id => "book_listener"}
-  = link_to 'Vote', '#', {:id => "vote_listener"}
+  %h2
+    = link_to 'Book', '#', {:id => "book_listener"}
+    = link_to 'Vote', '#', {:id => "vote_listener"}
 
-#display_container
-
-
-
-
-#vote{:style => "display:none;"}
+  #display_container
 
 
-#group_id{:data => {:group => @group.id }}
+
+
+  #vote{:style => "display:none;"}
+
+
+  #group_id{:data => {:group => @group.id }}
 
 
 

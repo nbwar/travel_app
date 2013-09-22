@@ -1,17 +1,23 @@
 .container
 
-  %a{:href => '#', :id => "join_group"}
-    = "Join Adventure"
+  %ul.links
+    %li
+      %a{:href => '#', :id => "join_group"}
+        = "Join"
+    %li
+      %a{:href => new_travel_group_path}
+        = "Create"
   .join_box
     = form_tag "/join_group", :id => "join_form", :style => "display:none;" do
       = label_tag :group_code, "Group Code"
       = text_field_tag :group_code
       = submit_tag "Join"
 
-  %a{:href => new_travel_group_path}
-    = "Create Adventure"
+  %hr/
 
-  %ul.group_list
+  %section.group_lists
+    %h2
+      Trips
     -@groups.each do |g|
       = render "travel_groups/group", :g => g
 

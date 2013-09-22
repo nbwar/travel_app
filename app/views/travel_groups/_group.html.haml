@@ -1,4 +1,11 @@
-%li
-  = link_to(g) do
-    = g.name
-    = g.start_date
+.trip_box
+  .inner_container
+    = link_to image_tag("/assets/switz.jpg"), travel_group_path(g)
+  .group_info
+    %ul
+      %li
+        = link_to g.name, travel_group_path(g)
+      %li
+        = g.start_date
+
+

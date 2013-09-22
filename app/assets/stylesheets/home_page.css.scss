@@ -1,10 +1,45 @@
-@font-face {
-    font-family: 'Open-Sans'; /*a name to be used later*/
-    src: url('open-sans/OpenSans-Semibold.ttf'); /*URL to font*/
-}
+
 
 ul li {
   list-style: none;
+  display: inline;
+
+}
+
+a{
+  text-decoration: none;
+
+}
+
+.nav_div {
+  // position: relative;
+  height: 75px;
+  // display: inline;
+  // width: 50px;
+  .right {
+    float: right;
+    padding-right: 20px;
+    padding-top: 28px;
+
+    a {
+      color: black;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  }
+
+  .left {
+    float: left;
+    padding-top: 20px;
+    padding-left: 20px;
+
+    .logo {
+      font-family: Lobster, cursive;
+      color: black;
+      font-size: 2em;
+
+    }
+  }
 }
 
 .container {
@@ -15,6 +50,83 @@ ul li {
   width: 800px;
   height: 400px;
 }
+
+html {
+  background: #F0F0F0;
+}
+
+
+.links li {
+  display: inline-block;
+  min-width: 50px;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: #4BD3B8
+  }
+
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.group_lists {
+  position: relative;
+  padding-left: 12%;
+  padding-right: 3%;
+
+  h2 {
+    padding-right: 25px;
+    font-family: Montserrat;
+  }
+
+  .trip_box {
+    margin: 10px;
+    padding-top: 10px;
+    width: 300px;
+    height: 300px;
+    background: #FFFFFF;
+    float: left;
+
+    img {
+      width: 275px;
+    }
+  }
+}
+
+
+
+
+
+
+/***************************************/
+/* NAVBAR */
+/***************************************/
+
+.navbar {
+  width: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+
+
+
+/***************************************/
+/* MEDIA QUERIES */
+/***************************************/
+
+
+
 
 
 /* Smaller than standard 960 (devices and browsers) */
