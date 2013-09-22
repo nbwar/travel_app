@@ -1,4 +1,7 @@
 =content_for :title, "Travel"
 
-%h1
-  Hello from index
+- if current_user
+  = render 'dashboard'
+- else
+  %h1
+    Hello from index
