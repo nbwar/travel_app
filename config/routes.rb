@@ -16,6 +16,9 @@ Travel::Application.routes.draw do
 
 
   post '/join_group' => "travel_groups#join_group"
+  get '/bookings' => "travel_groups#bookings"
+  get '/suggestions' => "travel_groups#suggestions"
+  post "/cast_vote" => "travel_groups#cast_vote"
 
 
 

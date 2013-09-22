@@ -1,0 +1,10 @@
+- if !bookings.empty?
+  %ul
+    -bookings.each do |booking|
+      %li
+        =booking.excursion.name
+        =booking.vote_count
+
+-else
+  %p
+    = "No Suggestions have been voted on Vote Now"

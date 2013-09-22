@@ -1,0 +1,7 @@
+%ul
+  - if !suggestions.compact.empty?
+    -suggestions.each do |s|
+      %li
+        = s.excursion.name
+        = link_to 'Like', '#', {:class => 'vote_cast', :data => {:suggestion => s.id, :choice => 1}}
+        = link_to 'Dislike', '#',{:class => 'vote_cast', :data => {:suggestion => s.id, :choice => 0}}

@@ -8,7 +8,7 @@ class TravelGroup < ActiveRecord::Base
   geocoded_by :destination
   after_validation :geocode
   before_create :generate_code
-  after_create :find_excursions
+  # after_create :find_excursions
 
 
 

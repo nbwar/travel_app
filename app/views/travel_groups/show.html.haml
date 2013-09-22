@@ -10,7 +10,28 @@
   = image_tag u.image
 
 %h2
-  Exursions
+  = link_to 'Book', '#', {:id => "book_listener"}
+  = link_to 'Vote', '#', {:id => "vote_listener"}
+
+#display_container
+
+
+
+
+#vote{:style => "display:none;"}
+
+
+#group_id{:data => {:group => @group.id }}
+
+
+
+:javascript
+  $(document).ready(function() {
+    groupListeners.init();
+    groupController.bookings();
+  });
+
+
 
 
 

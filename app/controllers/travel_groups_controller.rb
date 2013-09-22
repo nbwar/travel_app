@@ -15,6 +15,41 @@ class TravelGroupsController < ApplicationController
 
   def show
     @group = TravelGroup.find(params[:id])
+    # @bookings = @group.suggestions.select{|s| s.vote_count > 0}
+    # @suggestions = @group.suggestions.map do |suggestion|
+    #   users = suggestion.votes.map(&:user_id)
+    #   suggestion unless users.include?(current_user.id)
+    # end
+  end
+
+  def suggestions
+    group = TravelGroup.find(params["group"])
+    suggestions = group.suggestions.map do |suggestion|
+      users = suggestion.votes.map(&:user_id)
+      suggestion unless users.include?(current_user.id)
+    end
+
+
+    render :json => render_to_string(:partial => 'travel_groups/suggestions_list', :locals => {suggestions: suggestions}).to_json
+
+  end
+
+  def bookings
+    group = TravelGroup.find(params["group"])
+    bookings = group.suggestions.select{|s| s.vote_count > 0}
+    render :json => render_to_string(:partial => 'travel_groups/bookings_list', :locals => {bookings: bookings}).to_json
+  end
+
+  def cast_vote
+    suggestion = Suggestion.find(params["suggestion"])
+    vote = suggestion.votes.new(user_id: current_user.id, choice: params["choice"] )
+    if vote.save
+      suggestion.vote_count += vote.choice
+      suggestion.save
+      render :json => {success: "true", vote: vote.choice}
+    else
+      render :json => {success: "false"}
+    end
   end
 
   def join_group

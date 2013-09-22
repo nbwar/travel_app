@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20130922053742) do
   end
 
   create_table "suggestions", force: true do |t|
-    t.integer  "vote_count"
+    t.integer  "vote_count",      default: 0
     t.integer  "travel_group_id"
     t.integer  "excursion_id"
     t.datetime "created_at"
