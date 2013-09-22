@@ -1,9 +1,26 @@
 - if !bookings.empty?
   %ul
     -bookings.each do |booking|
-      %li
-        =booking.excursion.name
-        =booking.vote_count
+
+    .trip_box
+      .inner_container
+        = image_tag("#{booking.image_url}"),
+      .group_info
+        %ul
+          %li
+            = booking.name
+          %li
+            = booking.vote_count
+          %li
+            = booking.price
+
+
+/ - if !bookings.empty?
+/   %ul
+/     -bookings.each do |booking|
+/       %li
+/         =booking.excursion.name
+/         =booking.vote_count
 
 -else
   %p
