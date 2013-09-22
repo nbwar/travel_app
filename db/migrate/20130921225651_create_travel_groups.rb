@@ -5,8 +5,8 @@ class CreateTravelGroups < ActiveRecord::Migration
       t.string :destination
       t.string :city
       t.string :state
-      t.float :lat
-      t.float :long
+      t.float :latitude
+      t.float :longitude
       t.text :description
       t.date :start_date
       t.date :end_date

@@ -5,6 +5,8 @@ class TravelGroup < ActiveRecord::Base
   has_many :excursions, through: :suggestions
 
   before_save :generate_name
+  geocoded_by :destination
+  after_validation :geocode
 
 
   private

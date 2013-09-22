@@ -8,8 +8,9 @@ class CreateExcursions < ActiveRecord::Migration
       t.string :link
       t.string :city
       t.string :state
-      t.float :lat
-      t.float :long
+      t.string :country
+      t.float :latitude
+      t.float :longitude
       t.date :date
 
       t.timestamps
