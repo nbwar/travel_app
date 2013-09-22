@@ -1,27 +1,17 @@
-- if !bookings.empty?
-  %ul
-    -bookings.each do |booking|
-
-    .trip_box
-      .inner_container
-        = image_tag("#{booking.image_url}"),
-      .group_info
-        %ul
-          %li
-            = booking.name
-          %li
-            = booking.vote_count
-          %li
-            = booking.price
-
-
-/ - if !bookings.empty?
-/   %ul
-/     -bookings.each do |booking|
-/       %li
-/         =booking.excursion.name
-/         =booking.vote_count
-
--else
-  %p
-    = "No Suggestions have been voted on Vote Now"
+%section.group_lists
+  - if !bookings.empty?
+    - bookings.each do |booking|
+      .trip_box
+        .inner_container
+          = image_tag("/assets/excursions/#{booking.excursion.image_url}")
+        .group_info
+          %ul
+            %li
+              = booking.excursion.name
+            %li
+              = booking.vote_count
+            %li
+              = booking.excursion.price
+  - else
+    %p
+      = "No Suggestions have been voted on Vote Now"
