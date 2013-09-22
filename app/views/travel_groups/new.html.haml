@@ -1,3 +1,5 @@
+%script{src:"https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"}
+
 %h1
   Create Travel Group
 
@@ -15,7 +17,7 @@
 
     = f.label :destination, 'Destination'
     %br/
-    = f.text_field :destination
+    = f.text_field :destination, :id => 'searchTextField', :placeholder => 'Enter City', :required => true
 
     %h2
       Type of Adventure
@@ -29,6 +31,20 @@
       %li
         Adventure
     = f.submit "Create Adventure"
+
+:javascript
+  $(function() {
+    var searchInputField = document.getElementById('searchTextField');
+    var searchBox = new SearchBox(searchInputField);
+    datePickerClickEvents();
+    navBarController();
+  });
+
+
+
+
+
+
 
 
 
