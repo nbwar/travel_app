@@ -1,7 +1,15 @@
 %h1
   hello
+%a{:href => '#', :id => "join_group"}
+  = "Join Adventure"
+.join_box
+  = form_tag "/join_group", :id => "join_form", :style => "display:none;" do
+    = label_tag :group_code, "Group Code"
+    = text_field_tag :group_code
+    = submit_tag "Join"
+
 %a{:href => new_travel_group_path}
-  Create Adventure
+  = "Create Adventure"
 
 %ul
   -@groups.each do |g|
@@ -10,7 +18,22 @@
         = g.name
         = g.start_date
 
-
-
-
-
+:javascript
+  $(document).ready(function() {
+    $("#join_group").on("click", function(e) {
+      e.preventDefault();
+      $("#join_form").show();
+      $("#join_form").on("submit", function(e) {
+        e.preventDefault();
+        $("#join_form").hide();
+        var data = $(this).serialize();
+        $.ajax({
+          method: "post",
+          url: "/join_group",
+          data: data
+        }).done(function(response) {
+          console.log(response);
+        });
+      });
+    });
+  });

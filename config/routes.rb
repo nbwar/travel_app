@@ -15,6 +15,9 @@ Travel::Application.routes.draw do
   get '/auth/facebook', as: 'facebook_oauth'
 
 
+  post '/join_group' => "travel_groups#join_group"
+
+
 
   namespace :api do
     get '/users.json' => 'test#index'

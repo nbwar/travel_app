@@ -17,6 +17,12 @@ class TravelGroupsController < ApplicationController
     @group = TravelGroup.find(params[:id])
   end
 
+  def join_group
+    p '*' * 1000
+    p params["group_code"]
+    render :json => {test: "blah"}
+  end
+
   private
 
     def travel_params

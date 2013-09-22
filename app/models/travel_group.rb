@@ -7,7 +7,7 @@ class TravelGroup < ActiveRecord::Base
   before_save :generate_name
   geocoded_by :destination
   after_validation :geocode
-
+  before_create :generate_code
   after_create :find_excursions
 
 
@@ -18,7 +18,14 @@ class TravelGroup < ActiveRecord::Base
     end
 
     def find_excursions
+      r = HTTParty.get("https://dev.xola.com/api/experiences\?geo=#{self.latitude},#{self.longitude}")
+      json = JSON.parse(r.body)
+      p '*' * 1000
+      p json["data"].first
+    end
 
+    def generate_code
+      self.group_code = SecureRandom.hex(3).downcase
     end
 
 end
