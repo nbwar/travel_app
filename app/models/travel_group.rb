@@ -8,11 +8,17 @@ class TravelGroup < ActiveRecord::Base
   geocoded_by :destination
   after_validation :geocode
 
+  after_create :find_excursions
+
 
   private
 
     def generate_name
       self.name ||= self.users.first.first_name + " " + self.destination
+    end
+
+    def find_excursions
+
     end
 
 end

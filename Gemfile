@@ -11,7 +11,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'haml-rails'
 gem 'omniauth-facebook'
 gem 'geocoder'
-
+gem 'httparty'
 
 
 group :doc do
