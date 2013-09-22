@@ -1,0 +1,40 @@
+.group_list{
+	max-width: 100%;
+	padding-left: 50%;
+	padding-right: 50%;
+}
+
+.title{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-shadow: 0 2px 3px #555;  
+}
+.date{
+  color: white;
+	text-shadow: 0 2px 3px #555;
+	padding: 10px 0 0 5px;
+	font-size: 16px;
+}
+
+.sub_header{
+  clear:both;
+  padding-left: 25%;
+}
+.type{
+	min-height:50px;
+	width: 200px;
+}
+
+.airline_info{
+  color: white;
+	text-shadow: 0 2px 3px #555;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  max-width: 460px;
+  max-height: 100%;
+  min-height: 150px;
+  min-width: 300px;
+  margin-bottom: 20px;
+  background: rgb(43, 34, 25);
+  background: rgba(244, 244, 244, 0.7);
+}

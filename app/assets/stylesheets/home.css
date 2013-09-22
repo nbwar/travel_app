@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Open-Sans'; /*a name to be used later*/
+    src: url('open-sans/OpenSans-Semibold.ttf'); /*URL to font*/
+}
+
+.login{
+	position: absolute;
+	width: 20%;
+	left:40%;
+	top:40%;
+}
+
+.fb_login{
+	height: 5em;
+}
+
+.slogan{
+	color:#e7fafe;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 1em;	
+	text-shadow: 0 2px 3px #555;
+	padding-left: 10%;
+	padding-bottom: 2em;
+}
+
+.advent{
+	color:#e7fafe;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2em;
+	padding-left: 10%;
+	text-shadow: 0 2px 3px #555;
+}
