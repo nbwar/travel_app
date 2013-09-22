@@ -18,9 +18,17 @@ class TravelGroupsController < ApplicationController
   end
 
   def join_group
-    p '*' * 1000
-    p params["group_code"]
-    render :json => {test: "blah"}
+    group = TravelGroup.find_by_group_code(params["group_code"])
+    if group && !group.users.include?(current_user)
+      group.users << current_user
+      render :json => render_to_string(:partial => 'travel_groups/group', locals: {:g => group}).to_json
+    elsif group && group.users.include?(current_user)
+      error = "Already member of group"
+      render :json => {test: error}
+    else
+      error = "Invalid group code"
+      render :json => {test: error}
+    end
   end
 
   private

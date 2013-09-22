@@ -11,12 +11,9 @@
 %a{:href => new_travel_group_path}
   = "Create Adventure"
 
-%ul
+%ul.group_list
   -@groups.each do |g|
-    %li
-      = link_to(g) do
-        = g.name
-        = g.start_date
+    = render "travel_groups/group", :g => g
 
 :javascript
   $(document).ready(function() {
@@ -32,7 +29,7 @@
           url: "/join_group",
           data: data
         }).done(function(response) {
-          console.log(response);
+          $(".group_list").append(response);
         });
       });
     });
