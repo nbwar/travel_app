@@ -2,11 +2,14 @@ class CreateExcursions < ActiveRecord::Migration
   def change
     create_table :excursions do |t|
       t.string :name
-      t.string :location
       t.string :description
       t.string :price
       t.string :image_url
       t.string :link
+      t.string :city
+      t.string :state
+      t.float :lat
+      t.float :long
       t.date :date
 
       t.timestamps

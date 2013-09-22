@@ -18,11 +18,14 @@ ActiveRecord::Schema.define(version: 20130922014819) do
 
   create_table "excursions", force: true do |t|
     t.string   "name"
-    t.string   "location"
     t.string   "description"
     t.string   "price"
     t.string   "image_url"
     t.string   "link"
+    t.string   "city"
+    t.string   "state"
+    t.float    "lat"
+    t.float    "long"
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -39,6 +42,10 @@ ActiveRecord::Schema.define(version: 20130922014819) do
   create_table "travel_groups", force: true do |t|
     t.string   "name"
     t.string   "destination"
+    t.string   "city"
+    t.string   "state"
+    t.float    "lat"
+    t.float    "long"
     t.text     "description"
     t.date     "start_date"
     t.date     "end_date"
