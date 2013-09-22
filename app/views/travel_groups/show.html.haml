@@ -4,10 +4,12 @@
 %h3
   = "Group Code: #{@group.group_code}"
 %h2
-  Adventurers +
-
-- @group.users.each do |u|
-  = image_tag u.image
+  Adventurers 
+  <img src='FUCKING_PLUS.png' id='add_friend'>
+#friends
+  .member_table
+  - @group.users.each do |u|
+    = image_tag u.image
 
 %h2
   = link_to 'Book', '#', {:id => "book_listener"}
@@ -22,14 +24,6 @@
 
 
 #group_id{:data => {:group => @group.id }}
-
-
-
-:javascript
-  $(document).ready(function() {
-    groupListeners.init();
-    groupController.bookings();
-  });
 
 
 

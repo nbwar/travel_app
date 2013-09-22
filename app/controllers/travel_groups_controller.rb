@@ -28,8 +28,8 @@ class TravelGroupsController < ApplicationController
       users = suggestion.votes.map(&:user_id)
       suggestion unless users.include?(current_user.id)
     end
-
-
+    # suggestions = Suggestion.all
+  
     render :json => render_to_string(:partial => 'travel_groups/suggestions_list', :locals => {suggestions: suggestions}).to_json
 
   end
@@ -41,6 +41,8 @@ class TravelGroupsController < ApplicationController
   end
 
   def cast_vote
+    print "*" * 23
+    print params
     suggestion = Suggestion.find(params["suggestion"])
     vote = suggestion.votes.new(user_id: current_user.id, choice: params["choice"] )
     if vote.save
