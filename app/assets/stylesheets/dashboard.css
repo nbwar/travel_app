@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Open-Sans'; /*a name to be used later*/
+    src: url('open-sans/OpenSans-Semibold.ttf'); /*URL to font*/
+}
+
+.login{
+	position: absolute;
+	left:40%;
+	top:40%;
+}
+
+.fb_login{
+	height: 5em;
+}
+
+/*.bg{
+	position: absolute;
+	left:30%;
+	top:30%;
+	min-height: 200px;
+	min-width: 400px;
+	height:40%;
+	width: 40%;
+	background-color: gray;
+	opacity: 0.5;
+}*/
+
+.slogan{
+	color:#e7fafe;
+	font-family: 'Open-Sans';
+	font-size: 1em;	
+	text-shadow: 0 2px 3px #555;
+	padding-left: 10%;
+	padding-bottom: 2em;
+}
+
+.advent{
+	color:#e7fafe;
+	font-family: 'Open-Sans';
+	padding-left: 10%;
+	text-shadow: 0 2px 3px #555;
+}
