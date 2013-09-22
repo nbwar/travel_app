@@ -1,42 +1,86 @@
-@font-face {
-    font-family: 'Open-Sans'; /*a name to be used later*/
-    src: url('open-sans/OpenSans-Semibold.ttf'); /*URL to font*/
+.group_list{
+	width: 100%;
+	min-height: 480px;
+	padding-left: 50%;
+	padding-right: 50%;
 }
-
-.login{
-	position: absolute;
-	left:40%;
-	top:40%;
+/*.bg_group{
+  max-width: 480px;
+  max-height: 100%;
+  min-height: 150px;
+  min-width: 320px;
+  background: rgb(222, 222, 222);
+  background: rgba(222, 222, 222, 0.7);
 }
-
-.fb_login{
-	height: 5em;
-}
-
-/*.bg{
-	position: absolute;
-	left:30%;
-	top:30%;
-	min-height: 200px;
-	min-width: 400px;
-	height:40%;
-	width: 40%;
-	background-color: gray;
-	opacity: 0.5;
-}*/
-
-.slogan{
-	color:#e7fafe;
-	font-family: 'Open-Sans';
-	font-size: 1em;	
+*/
+#join_group{
+	color: white;
 	text-shadow: 0 2px 3px #555;
-	padding-left: 10%;
-	padding-bottom: 2em;
 }
 
-.advent{
-	color:#e7fafe;
-	font-family: 'Open-Sans';
-	padding-left: 10%;
+.create_btn{
+	float:left;
+	top:5px;
+  color: white;
 	text-shadow: 0 2px 3px #555;
+	right: 0;
+}
+
+ul{
+	list-style: none;
+}
+
+.exc_item{
+  max-width:30em;
+  max-height: 12em;
+  min-width: 24em;
+  min-height: 8em;
+  margin-bottom: 20px;
+  border: 3px;
+}
+.exc_bg{
+  max-width: 460px;
+  max-height: 100%;
+  min-height: 150px;
+  min-width: 300px;
+  margin-bottom: 20px;
+  background: rgb(43, 34, 25);
+  background: rgba(43, 34, 25, 0.7);
+}
+.exc_name{
+  min-width: 200px;
+  min-height: 50px;
+  padding: 5px 0 0 10px ;
+  color: white;
+  float:left;
+  text-shadow: 0 2px 3px #555;
+  font-size: 40px;
+}
+.date{
+	float:left;
+}
+.exc_start{
+  padding-left: 10px;
+  min-height: 30px;
+  min-width: 20px;
+  float: left;
+  text-shadow: 0 2px 3px #555;
+  color: white;
+}
+
+.dash{
+	padding-left: 5px;
+	padding-right: 5px;	
+	float: left;
+	text-shadow: 0 2px 3px #555;
+  color: white;
+	margin:0; 
+}
+.exc_end{
+  padding-left: 5px;
+  min-height: 30px;
+  color: white;
+	text-shadow: 0 2px 3px #555;
+  min-width: 20px;
+  float: left;
 }

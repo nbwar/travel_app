@@ -1,4 +1,9 @@
-%li
-  = link_to(g) do
+= link_to(g) do
+  .exc_name
     = g.name
-    = g.start_date
+  .date
+    .exc_start
+      = g.start_date
+    %p.dash -
+    .exc_end
+      = g.end_date

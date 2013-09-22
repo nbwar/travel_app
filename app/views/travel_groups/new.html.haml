@@ -1,36 +1,27 @@
 %script{src:"https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"}
-
-%h1
-  Create Travel Group
-
-.airline_info
-  = form_for @travel_group do |f|
-    = f.label :start_date, 'Arrival Date'
-    %br/
-    = f.date_field :start_date
-    %br/
-    %br/
-    = f.label :end_date, 'Arrival Date'
-    %br/
-    = f.date_field :end_date
-    %br/
-
-    = f.label :destination, 'Destination'
-    %br/
-    = f.text_field :destination, :id => 'searchTextField', :placeholder => 'Enter City', :required => true
-
-    %h2
-      Type of Adventure
-    %ul
-      %li
-        Fun
-      %li
-        Family
-      %li
-        Touristy
-      %li
-        Adventure
-    = f.submit "Create Adventure"
+.group_list
+  %h1.title
+    Create Travel Group
+  
+  .airline_info
+    = form_for @travel_group do |f|
+      .date.arrival
+        = f.label :start_date, 'Arrival'
+        = f.date_field :start_date
+      .date.departure
+        = f.label :end_date, 'Departure'
+        = f.date_field :end_date
+      .date
+        = f.label :destination, 'Destination'
+        = f.text_field :destination, :id => 'searchTextField', :placeholder => 'Enter City', :required => true
+  
+      %h2.sub_header
+        Type of Adventure
+        %br
+        = f.submit 'Fun', {class: 'type'}
+        = f.submit 'Family', {class: 'type'}
+        = f.submit 'Touristy', {class: 'type'}
+        = f.submit 'Adventure', {class: 'type'}
 
 :javascript
   $(function() {

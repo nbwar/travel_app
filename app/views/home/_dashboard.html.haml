@@ -1,19 +1,20 @@
-%h1
-  hello
-%a{:href => '#', :id => "join_group"}
-  = "Join Adventure"
-.join_box
-  = form_tag "/join_group", :id => "join_form", :style => "display:none;" do
-    = label_tag :group_code, "Group Code"
-    = text_field_tag :group_code
-    = submit_tag "Join"
-
-%a{:href => new_travel_group_path}
-  = "Create Adventure"
-
-%ul.group_list
-  -@groups.each do |g|
-    = render "travel_groups/group", :g => g
+.group_list
+  %a{:href => '#', :id => "join_group"}
+    = "Join Adventure"
+  .join_box
+    = form_tag "/join_group", :id => "join_form", :style => "display:none;" do
+      = label_tag :group_code, "Group Code"
+      = text_field_tag :group_code
+      = submit_tag "Join"
+  
+  %a.create_btn{:href => new_travel_group_path}
+    Create Adventure
+  %ul
+    -@groups.each do |g|
+      .exc_item
+        %li.exc_btn
+          = render "travel_groups/group", :g => g
+        <div class="exc_bg">
 
 :javascript
   $(document).ready(function() {
