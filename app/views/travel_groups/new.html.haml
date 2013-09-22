@@ -1,0 +1,34 @@
+%h1
+  Create Travel Group
+
+.airline_info
+  = form_for @travel_group do |f|
+    = f.label :start_date, 'Arrival Date'
+    %br/
+    = f.date_field :start_date
+    %br/
+    %br/
+    = f.label :end_date, 'Arrival Date'
+    %br/
+    = f.date_field :end_date
+    %br/
+
+    = f.label :destination, 'Destination'
+    %br/
+    = f.text_field :destination
+
+    %h2
+      Type of Adventure
+    %ul
+      %li
+        Fun
+      %li
+        Family
+      %li
+        Touristy
+      %li
+        Adventure
+    = f.submit "Create Adventure"
+
+
+

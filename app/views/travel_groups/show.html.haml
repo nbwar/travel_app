@@ -1,0 +1,14 @@
+%h1
+  = @group.name
+  = "#{@group.start_date} - #{@group.end_date}"
+%h2
+  Adventurers +
+
+- @group.users.each do |u|
+  = image_tag u.image
+
+%h2
+  Exursions
+
+
+

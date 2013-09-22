@@ -1,2 +1,16 @@
 %h1
   hello
+%a{:href => new_travel_group_path}
+  Create Adventure
+
+%ul
+  -@groups.each do |g|
+    %li
+      = link_to(g) do
+        = g.name
+        = g.start_date
+
+
+
+
+

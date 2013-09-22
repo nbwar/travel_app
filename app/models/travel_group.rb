@@ -4,4 +4,13 @@ class TravelGroup < ActiveRecord::Base
   has_many :suggestions
   has_many :excursions, through: :suggestions
 
+  before_save :generate_name
+
+
+  private
+
+    def generate_name
+      self.name ||= self.users.first.first_name + " " + self.destination
+    end
+
 end
