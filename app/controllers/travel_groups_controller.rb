@@ -36,7 +36,7 @@ class TravelGroupsController < ApplicationController
 
   def bookings
     group = TravelGroup.find(params["group"])
-    bookings = group.suggestions.select{|s| s.vote_count > 0}
+    bookings = group.suggestions.select{|s| s.vote_count > 0}.sort_by(&:vote_count)
     render :json => render_to_string(:partial => 'travel_groups/bookings_list', :locals => {bookings: bookings}).to_json
   end
 
