@@ -2,7 +2,7 @@ var groupView = {
   injectPartial: function(html) {
     $("#display_container").html(html);
   }
-}
+};
 
 var groupListeners = {
   init: function() {
@@ -28,7 +28,7 @@ var groupListeners = {
       voteController.castVote($(this));
     });
   }
-}
+};
 
 var groupController = {
   bookings: function() {
@@ -53,7 +53,7 @@ var groupController = {
       groupView.injectPartial(response)
     });
   }
-}
+};
 
 
 var voteController = {
@@ -71,4 +71,4 @@ var voteController = {
       }
     });
   }
-}
+};
