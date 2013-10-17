@@ -10,9 +10,6 @@ class TravelGroup < ActiveRecord::Base
   before_create :generate_code
   # after_create :find_excursions
 
-
-
-
   private
 
     def generate_name
